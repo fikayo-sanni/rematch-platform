@@ -1,0 +1,30 @@
+import { DuctapeService } from '../config/ductape.config';
+export declare class GraphSetupService {
+    private readonly ductape;
+    private readonly logger;
+    constructor(ductape: DuctapeService);
+    setupGraph(): Promise<void>;
+    private createConstraints;
+    private createGraphIndexes;
+    createUserNode(id: string, username: string, level: number, reputation?: number, isOnline?: boolean): Promise<any>;
+    createGuildNode(id: string, name: string, slug: string, accentColor?: string): Promise<any>;
+    createCrewNode(id: string, name: string, tag: string, rank?: number): Promise<any>;
+    userJoinsGuild(userId: string, guildId: string): Promise<any>;
+    userLeavesGuild(userId: string, guildId: string): Promise<any>;
+    userJoinsCrew(userId: string, crewId: string, role?: string): Promise<any>;
+    userLeavesCrew(userId: string, crewId: string): Promise<any>;
+    userFollowsUser(followerId: string, followedId: string): Promise<any>;
+    userUnfollowsUser(followerId: string, followedId: string): Promise<any>;
+    recordMatch(matchId: string, player1Id: string, player2Id: string, winnerId: string, guildId: string): Promise<any>;
+    getUserGuilds(userId: string): Promise<any>;
+    getGuildMembers(guildId: string, limit?: number): Promise<any>;
+    getCrewMembers(crewId: string): Promise<any>;
+    getOnlineFriends(userId: string): Promise<any>;
+    getMatchHistory(userId: string, limit?: number): Promise<any>;
+    getFrequentOpponents(userId: string, limit?: number): Promise<any>;
+    getSuggestedOpponents(userId: string, guildId: string, limit?: number): Promise<any>;
+    getMutualCrewmates(userId1: string, userId2: string): Promise<any>;
+    getCrewRankings(limit?: number): Promise<any>;
+    getGuildActivityStats(guildId: string): Promise<any>;
+    getUserNetworkStats(userId: string): Promise<any>;
+}
